@@ -4,7 +4,8 @@ import Image from "next/image";
 import { useState, useEffect } from 'react';
 import Slider from "./components/slider";
 import SliderPoster from "./components/sliderPoster";
-
+import SliderHero from "./components/sliderHero";
+import SliderAuto from "./components/SliderAuto";
 
 export default function Home() {
 
@@ -68,7 +69,9 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start bg-black">
-      <div className="w-full h-[50svh] bg-gray-900 mb-4"></div>
+      {/* <div className="w-full h-[50svh] bg-gray-900 mb-4"></div> */}
+      {/* <SliderHero movieData={popularMovies} title="Popular Movies" /> */}
+      <SliderAuto movieData={upcomingMovies} title="Popular Movies" />
       <Slider movieData={popularMovies} title="Popular Movies" /> 
       <Slider movieData={topRatedMovies} title="Top Rated Movies" />
       <SliderPoster movieData={upcomingMovies} title="Upcoming Movies" /> 
