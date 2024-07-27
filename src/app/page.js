@@ -68,7 +68,7 @@ export default function Home() {
   // } 
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start bg-black">
+    <main className="flex min-h-screen flex-col items-center justify-start bg-black mt-20">
       {/* <div className="w-full h-[50svh] bg-gray-900 mb-4"></div> */}
       {/* <SliderHero movieData={popularMovies} title="Popular Movies" /> */}
       <SliderAuto movieData={upcomingMovies} title="Popular Movies" />
