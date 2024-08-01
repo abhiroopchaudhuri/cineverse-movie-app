@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState, useEffect, useRef } from 'react';
 import { FaAngleDoubleRight, FaAngleDoubleLeft } from "react-icons/fa";
+import { useRouter } from "next/navigation";
 
 
 export default function Slider({movieData, title}) {
@@ -15,6 +16,7 @@ export default function Slider({movieData, title}) {
   const [visibleCards, setVisibleCards] = useState(0);
   const sliderRef = useRef(null);
   let scrollTimeout = useRef(null);
+  const router = useRouter();
 
 
 
@@ -94,15 +96,17 @@ export default function Slider({movieData, title}) {
           ref={sliderRef}
           onScroll={handleScroll}
         >
+          
           {movieData.map((movie, index) => (
             <div
-              className={`relative flex flex-col items-center justify-end text-center rounded-lg overflow-hidden min-w-[calc((100%-8px)/2)] md:min-w-[calc((100%-48px)/4)] h-auto aspect-[16/9] z-[1] ${
+              className={`relative flex flex-col items-center justify-end text-center rounded-lg overflow-hidden min-w-[calc((100%-8px)/2)] md:min-w-[calc((100%-48px)/4)] h-auto aspect-[16/9] z-[1] cursor-pointer ${
                 index % visibleCards === 0 ? 'snap-start' : ''
               }`}
               key={movie.id}
+              onClick={() => router.push(`/movies/${movie.id}`)}
             
             >
-            <img src={`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`} alt={movie.title} className="w-full h-full object-cover absolute top-0 left-0 z-[-10] hover:scale-110 transition-transform duration-500" />
+            <img src={movie.backdrop_path?`https://image.tmdb.org/t/p/w1280${movie.backdrop_path}`:'https://arquadrat.com/wp-content/uploads/2015/08/20.jpg'} alt={movie.title} className="w-full h-full object-cover absolute top-0 left-0 z-[-10] hover:scale-110 transition-transform duration-500" />
              <div className="w-full flex flex-row items-center justify-center p-2 bg-black bg-opacity-40 pointer-events-none">{movie.title}</div>
             </div>
           ))}

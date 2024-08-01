@@ -102,11 +102,12 @@ export default function Slider({movieData, title}) {
                 index % visibleCards === 0 ? 'snap-start' : ''
               }`}
               key={movie.id}
-              onClick={() => router.push(`/movies/${movie.id}`)}
+              // onClick={() => router.push(`/${movie.id}`)}
             
             >
-            <img src={`https://image.tmdb.org/t/p/w1280${movie.poster_path}`} alt={movie.title} className="w-full h-full object-cover absolute top-0 left-0 z-[-10] hover:scale-110 transition-transform duration-500" />
-             {/* <div className="w-full flex flex-row items-center justify-center p-2 bg-black bg-opacity-40 pointer-events-none">{movie.title}</div> */}
+            <img src={movie.profile_path?`https://image.tmdb.org/t/p/w1280${movie.profile_path}`:'https://arquadrat.com/wp-content/uploads/2015/08/20.jpg'} alt={movie.title} className="w-full h-full object-cover absolute top-0 left-0 z-[-10] hover:scale-110 transition duration-500 grayscale hover:grayscale-0" />
+             <div className="w-full flex flex-row items-center justify-center p-2 bg-black bg-opacity-60 pointer-events-none">{movie.name}</div>
+             <div className="w-full flex flex-row items-center justify-center p-2 bg-white text-black bg-opacity-70 pointer-events-none">({movie.character})</div>
             </div>
           ))}
         </div>
