@@ -4,12 +4,14 @@ import { useState, useEffect } from 'react';
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import Image from 'next/image';
+import SearchBar from './SearchBar';
 
 export default function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
   const pathname = usePathname();
+
 
   const isMoviePage = () => {
 
@@ -39,9 +41,9 @@ export default function Navbar() {
     >
       <Link href="/" className="flex items-center">
         <div className="w-16 h-16 rounded-md flex items-center justify-center overflow-hidden">
-          <Image src="/logo2.png" alt="Cineverse Logo" width={70} height={70} />
+          <Image src="/logo2.png" alt="Cineverse Logo" width={60} height={60} />
         </div>
-        {!isMoviePage() && <span className="text-white text-xl font-semibold">Cineverse</span>}
+         <div className={`${!isMoviePage() ? 'max-w-[120px]' : 'max-w-0'} overflow-hidden transition-all duration-300 ease-in-out`}><span className="text-white text-2xl XLfont-semibold font-oswald tracking-widest whitespace-nowrap">CINEVERSE</span></div>
       </Link>
       
       <div className="flex items-center space-x-6">
@@ -51,27 +53,8 @@ export default function Navbar() {
         <Link href="/tvshows" className="text-gray-300 hover:text-white transition-colors">
           TV Shows
         </Link>
-        <div className="relative">
-          <input
-            type="text"
-            placeholder="Search..."
-            className="bg-gray-800 text-white px-4 py-2 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 w-64"
-          />
-          <svg
-            className="absolute right-3 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-            />
-          </svg>
-        </div>
+
+        <SearchBar />
       </div>
     </nav>
   );

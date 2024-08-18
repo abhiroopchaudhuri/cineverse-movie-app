@@ -30,4 +30,12 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+
+  .font-oswald {
+    font-family: var(--font-oswald);
+    font-optical-sizing: auto;
+    font-weight: 200; /* You can adjust this value between 200 and 700 */
+    font-style: normal;
+  }
+
 }
