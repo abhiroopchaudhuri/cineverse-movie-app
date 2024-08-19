@@ -106,8 +106,8 @@ export default function Slider({movieData, title}) {
             
             >
             <img src={movie.profile_path?`https://image.tmdb.org/t/p/w1280${movie.profile_path}`:'https://arquadrat.com/wp-content/uploads/2015/08/20.jpg'} alt={movie.title} className="w-full h-full object-cover absolute top-0 left-0 z-[-10] hover:scale-110 transition duration-500 grayscale hover:grayscale-0" />
-             <div className="w-full flex flex-row items-center justify-center p-2 bg-black bg-opacity-60 pointer-events-none">{movie.name}</div>
-             <div className="w-full flex flex-row items-center justify-center p-2 bg-white text-black bg-opacity-70 pointer-events-none">({movie.character})</div>
+             <div className="w-full flex flex-row items-center justify-center p-2 bg-black bg-opacity-60 pointer-events-none text-[10px] md:text-[14px]">{movie.name}</div>
+             <div className="hidden w-full md:flex flex-row items-center justify-center p-2 bg-white text-black bg-opacity-70 pointer-events-none text-[10px] md:text-[14px]">({movie.character})</div>
             </div>
           ))}
         </div>

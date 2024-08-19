@@ -44,7 +44,7 @@ const SliderAuto = ({ movieData }) => {
 
   return (
     <div
-      className="relative w-full h-[60svh] overflow-hidden"
+      className="relative w-full h-[40svh] md:h-[60svh] overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -89,7 +89,7 @@ const SliderAuto = ({ movieData }) => {
       </div>
 
       {/* overlay */}
-      <div className="absolute left-0 right-0 top-0 bottom-0 bg-black bg-opacity-50 flex flex-col items-start justify-end px-8 py-24 gap-4 cursor-pointer"
+      <div className="absolute left-0 right-0 top-0 bottom-0 bg-black bg-opacity-50 flex flex-col items-center md:items-start md:justify-end text-center md:text-start justify-end px-8 py-16 md:py-36 md:gap-4 gap-2 cursor-pointer"
         onClick={() => router.push(`/movies/${movieData[currentIndex]?.id}`)}
       >
         <h1 className='text-4xl font-bold text-white pointer-events-none'>{
@@ -97,7 +97,7 @@ const SliderAuto = ({ movieData }) => {
     ? movieData[currentIndex]?.title 
     : movieData[0]?.title
 }</h1>
-        <p className='text-white text-lg w-1/3 line-clamp-4 mb-8 pointer-events-none'>{
+        <p className='text-white text-lg md:w-1/3 w-[80%] line-clamp-3 md:line-clamp-4 md:mb-8 mb-2 pointer-events-none'>{
   currentIndex < movieData.length 
     ? movieData[currentIndex]?.overview 
     : movieData[0]?.overview

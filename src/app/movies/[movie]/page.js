@@ -102,37 +102,37 @@ export default function Movie({ params }) {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start bg-black">
+    <main className="flex min-h-[65svh] md:min-h-screen flex-col items-center justify-start bg-black">
       {/* Background Video Container */}
 
-      <div className="relative flex justify-center w-full h-[100svh] aspect-[16/9] overflow-hidden">
-        <div className="flex flex-col justify-end w-full gap-4 h-[80%] px-16 py-8 z-20">
+      <div className="relative flex justify-center w-full h-[65svh] md:h-[100svh] aspect-[16/9] overflow-hidden">
+        <div className="flex flex-col justify-end items-center md:items-start w-full gap-4 md:h-[80%] px-16 py-8 z-20">
           <img
             src={`https://image.tmdb.org/t/p/w1280${movieDetails.poster_path}`}
-            className="w-[200px] h-auto object-cover mb-8 rounded-lg"
+            className="w-[120px] md:w-[200px] h-auto object-cover mb-2 md:mb-8 rounded-lg"
           ></img>
-          <h1 className="text-4xl text-white font-bold max-w-xl">
+          <h1 className="md:text-4xl text-lg text-white font-bold max-w-xl">
             {movieDetails.title}{" "}
           </h1>
           <div className="flex gap-4">
-            <span className="text-lg font-semibold max-w-xl">
+            <span className="md:text-lg text-sm font-semibold max-w-xl">
               {" "}
               {movieDetails.release_date?.substring(0, 4)}{" "}
             </span>
-            <span className="text-lg font-semibold max-w-xl">
+            <span className="md:text-lg text-sm font-semibold max-w-xl">
               {" "}
               ~ {movieDetails.runtime} mins{" "}
             </span>
-            <span className="text-md flex items-center text-align-center px-2 bg-opacity-30 bg-white text-white rounded max-w-xl">
+            <span className="md:text-md text-sm flex items-center text-align-center px-2 bg-opacity-30 bg-white text-white rounded max-w-xl">
               {movieDetails.adult ? "18+" : "PG 13"}
             </span>
           </div>
-          <p className="text-lg text-gray-400 max-w-xl max-h-[100px] line-clamp-3">
+          <p className="md:text-lg text-sm text-gray-400 max-w-xl max-h-[100px] line-clamp-3 text-center md:text-left">
             {movieDetails.overview}
           </p>
           <div className="flex gap-4">
             {movieDetails.genres?.map((genre, index) => (
-              <span key={index} className="text-lg font-semibold max-w-xl">
+              <span key={index} className="md:text-lg text-sm font-semibold max-w-xl">
                 {" "}
                 &#x2022; {genre.name}{" "}
               </span>
@@ -143,7 +143,7 @@ export default function Movie({ params }) {
 
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-40 z-10"></div>
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-black from-10% to-transparent to-70% opacity-90 z-10"></div>
-        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-60% to-black to-90%  z-10"></div>
+        <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent from-60% to-black to-90%  z-10 scale-110"></div>
         {!newOpts ? (
           <img
             src={`https://image.tmdb.org/t/p/w1280${movieDetails.backdrop_path}`}
@@ -154,7 +154,7 @@ export default function Movie({ params }) {
           <YouTube
             videoId={trailer[0]?.key}
             opts={newOpts}
-            className="absolute top-0 left-0 w-full h-full transform scale-150 pointer-events-none " // Initial positioning
+            className="absolute top-0 left-0 w-full h-full transform scale-[250%] md:scale-150 pointer-events-none " // Initial positioning
             iframeClassName="w-full h-full object-cover"
           />
         )}

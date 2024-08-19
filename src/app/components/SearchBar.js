@@ -207,7 +207,7 @@ export default function SearchBar() {
   }, [pathName]);
 
   return (
-    <div className="relative">
+    <div className="relative w-full md:w-64">
       <input
         type="text"
         value={query}
@@ -216,7 +216,7 @@ export default function SearchBar() {
         onFocus={handleFocus}
         onBlur={handleBlur}
         placeholder="Search..."
-        className="bg-black opacity-80 text-white px-4 py-2 rounded-full ring-2 ring-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 w-64 placeholder-gray-600"
+        className="bg-black opacity-80 text-white px-4 py-2 rounded-full ring-2 ring-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-600 w-[100%] md:w-64 placeholder-gray-600"
       />
       {query ? (
         <button
