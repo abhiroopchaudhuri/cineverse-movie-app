@@ -1,6 +1,6 @@
 # 🎬 Cineverse: Next-Gen Movie Recommendation App
 
-![Cineverse Banner](https://your-banner-image-url.com)
+![Cineverse Logo](https://github.com/abhicode7/cineverse-movie-app/blob/main/public/logo2.png?raw=true)
 
 ## 🌟 Overview
 
@@ -25,8 +25,9 @@ Cineverse is a cutting-edge movie recommendation app built with Next.js, React, 
 
 ## 📸 Screenshots
 
-![Homepage](https://your-homepage-screenshot-url.com)
-![Movie Details](https://your-movie-details-screenshot-url.com)
+![Homepage](https://github.com/user-attachments/assets/c1466b5d-31d4-4d31-93d2-53dbf83dcad3)
+![Movie Details](https://github.com/user-attachments/assets/9087e032-71b9-4f90-bee1-922003a3827b)
+![Movie Details](https://github.com/user-attachments/assets/5376a896-d79e-466d-a050-c4a65cd0b990)
 
 
 ## 👨‍💻 Author
