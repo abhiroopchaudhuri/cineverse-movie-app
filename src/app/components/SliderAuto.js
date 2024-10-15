@@ -103,7 +103,7 @@ const SliderAuto = ({ movieData }) => {
     : movieData[0]?.overview
 }</p>
 
-<button className='bg-pink-500 px-4 py-2 rounded-md flex flex-row justify-center items-center gap-2 text-black hover:bg-opacity-[70%] active:bg-opacity-[40%] transition-all duration-300 pointer-events-auto'> Read More</button>
+<button className='bg-pink-500 px-4 py-2 rounded-md flex flex-row justify-center items-center gap-2 text-white hover:bg-opacity-[70%] active:bg-opacity-[40%] transition-all duration-300 pointer-events-auto'> Read More</button>
       </div>
     </div>
   );
