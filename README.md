@@ -1,4 +1,4 @@
-# 🎬 Cineverse: Next-Gen Movie Recommendation App
+# 🎬 Cineverse: Next-Gen Movie App
 
 <img src="https://github.com/abhicode7/cineverse-movie-app/blob/main/public/logo2.png?raw=true" alt="Cineverse Logo" height="100">
 
